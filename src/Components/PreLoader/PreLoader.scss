@@ -1,0 +1,33 @@
+.preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #212020;
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    position: fixed;
+    font-family: sans-serif;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    .texts-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        height: 60px;
+        width: 250px;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 800;
+
+        .preloader-icon{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
