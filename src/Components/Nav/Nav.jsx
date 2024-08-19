@@ -33,9 +33,9 @@ const Nav = () => {
               </div>
             </div>
             <ul className='nav__bottom-links'>
-              <li><Link style={pathname === '/' ? {color: '#dedede'} : {color: '#a9a9a9'}} className='nav__link' to={'/'}>Home</Link></li>
-              <li><Link style={pathname.includes('portfolio') ? {color: '#dedede'} : {color: '#a9a9a9'}} className='nav__link' to={'/portfolio'}>Portfolio</Link></li>
-              <li><Link style={pathname.includes('process') ? {color: '#dedede'} : {color: '#a9a9a9'}} className='nav__link' to={'/process'}>Process</Link></li>
+              <li><Link onClick={() => {setOpen(!open); window.scrollTo(0, 0)}} style={pathname === '/' ? {color: '#dedede'} : {color: '#a9a9a9'}} className='nav__link' to={'/'}>Home</Link></li>
+              <li><Link onClick={() => {setOpen(!open); window.scrollTo(0, 0)}} style={pathname.includes('portfolio') ? {color: '#dedede'} : {color: '#a9a9a9'}} className='nav__link' to={'/portfolio'}>Portfolio</Link></li>
+              <li><Link onClick={() => {setOpen(!open); window.scrollTo(0, 0)}} style={pathname.includes('process') ? {color: '#dedede'} : {color: '#a9a9a9'}} className='nav__link' to={'/process'}>Process</Link></li>
             </ul>
         </div>
       </div>

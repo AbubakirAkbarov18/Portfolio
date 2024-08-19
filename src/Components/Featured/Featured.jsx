@@ -11,13 +11,14 @@ import ClimberView from '../../assets/ClimberView.png'
 import CoffeeView from '../../assets/CoffeeView.png'
 import eBayView from '../../assets/eBayView.png'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Featured = () => {
     const [open1, setOpen1] = useState(false)
     const [open2, setOpen2] = useState(false)
     const [open3, setOpen3] = useState(false)
     const [open4, setOpen4] = useState(false)
+    const Navigate = useNavigate()
 
     const featuredItemAnimation = {
         hidden: {
@@ -170,13 +171,13 @@ const Featured = () => {
                             </div>
                         </motion.div>
                     </div>
-                    <motion.Link
+                    <motion.a
                         initial='hidden'
                         whileInView='visible'
                         viewport={{ amount: 0.2 }}
                         variants={featuredBtnAnimation}
-                        className='featured__link' href="/portfolio">Explore all the projects
-                    </motion.Link>
+                        className='featured__link' href='/portfolio'>Explore all the projects
+                    </motion.a>
                 </div>
             </div>
             {open1 &&

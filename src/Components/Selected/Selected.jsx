@@ -3,6 +3,8 @@ import Coffee from '../../assets/Coffee.jpg'
 import Climber from '../../assets/Climber.jpg'
 import eBay from '../../assets/eBay.jpg'
 import Chocolate from '../../assets/Chocolate.jpg'
+import MakeUp from '../../assets/MakeUp.jpg'
+import Manual from '../../assets/Manual.jpg'
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { useState } from 'react'
 import { RxCross1 } from "react-icons/rx";
@@ -10,6 +12,8 @@ import ChocolateView from '../../assets/ChocolateView.png'
 import ClimberView from '../../assets/ClimberView.png'
 import CoffeeView from '../../assets/CoffeeView.png'
 import eBayView from '../../assets/eBayView.png'
+import MakeupView from '../../assets/MakeupView.png'
+import ManualView from '../../assets/ManualView.png'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
@@ -20,7 +24,6 @@ const Selected = () => {
     const [open4, setOpen4] = useState(false)
     const [open5, setOpen5] = useState(false)
     const [open6, setOpen6] = useState(false)
-    const [open7, setOpen7] = useState(false)
 
     const featuredItemAnimation = {
         hidden: {
@@ -124,6 +127,30 @@ const Selected = () => {
                                 <a className='featured__card-link' target='_blank' href="https://simplechocolate.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
                             </div>
                         </motion.div>
+                        <motion.div custom={5} variants={featuredItemAnimation} className='featured__card'>
+                            <a target='_blank' href="https://make-up-store.netlify.app/">
+                                <div className='featured__card-img'>
+                                    <img src={MakeUp} alt="" />
+                                    <a className='featured__card-link--flow' target='_blank' href="https://make-up-store.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                                </div>
+                            </a>
+                            <div className='featured__card-content'>
+                                <button onClick={() => setOpen5(!open5)} className='featured__card-btn'>Landing Page</button>
+                                <a className='featured__card-link' target='_blank' href="https://make-up-store.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                            </div>
+                        </motion.div>
+                        <motion.div custom={6} variants={featuredItemAnimation2} className='featured__card'>
+                            <a target='_blank' href="https://manual-web.netlify.app/">
+                                <div className='featured__card-img'>
+                                    <img src={Manual} alt="" />
+                                    <a className='featured__card-link--flow' target='_blank' href="https://manual-web.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                                </div>
+                            </a>
+                            <div className='featured__card-content'>
+                                <button onClick={() => setOpen6(!open6)} className='featured__card-btn'>Landing Page</button>
+                                <a className='featured__card-link' target='_blank' href="https://manual-web.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                            </div>
+                        </motion.div>
                     </motion.div>
                     <div className="featured__media-cards">
                         <motion.div initial='hidden' whileInView='visible' viewport={{ amount: 0.2 }} variants={featuredItemAnimation} className='featured__card featured__card-media'>
@@ -174,6 +201,30 @@ const Selected = () => {
                                 <a className='featured__card-link' target='_blank' href="https://simplechocolate.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
                             </div>
                         </motion.div>
+                        <motion.div initial='hidden' whileInView='visible' viewport={{ amount: 0.2 }} variants={featuredItemAnimation} className='featured__card featured__card-media'>
+                            <a target='_blank' href="https://make-up-store.netlify.app/">
+                                <div className='featured__card-img'>
+                                    <img src={MakeUp} alt="" />
+                                    <a className='featured__card-link--flow' target='_blank' href="https://make-up-store.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                                </div>
+                            </a>
+                            <div className='featured__card-content'>
+                                <button onClick={() => setOpen5(!open5)} className='featured__card-btn'>Landing Page</button>
+                                <a className='featured__card-link' target='_blank' href="https://make-up-store.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                            </div>
+                        </motion.div>
+                        <motion.div initial='hidden' whileInView='visible' viewport={{ amount: 0.2 }} variants={featuredItemAnimation2} className='featured__card featured__card-media'>
+                            <a target='_blank' href="https://manual-web.netlify.app/">
+                                <div className='featured__card-img'>
+                                    <img src={Manual} alt="" />
+                                    <a className='featured__card-link--flow' target='_blank' href="https://manual-web.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                                </div>
+                            </a>
+                            <div className='featured__card-content'>
+                                <button onClick={() => setOpen6(!open6)} className='featured__card-btn'>Landing Page</button>
+                                <a className='featured__card-link' target='_blank' href="https://manual-web.netlify.app/">View Project <MdOutlineArrowOutward className='featured__card-arrow' /></a>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
@@ -213,6 +264,26 @@ const Selected = () => {
                         <div className="featured__overlay-content">
                             <img src={ChocolateView} alt="" />
                             <button className='featured__overlay-btn' onClick={() => setOpen4(!open4)}>Close <RxCross1 /></button>
+                        </div>
+                    </div>
+                </div>
+            }
+            {open5 &&
+                <div onClick={() => setOpen5(!open5)} data-open={open5} className='featured__overlay'>
+                    <div onClick={(e) => e.stopPropagation()} className='container'>
+                        <div className="featured__overlay-content">
+                            <img src={MakeupView} alt="" />
+                            <button className='featured__overlay-btn' onClick={() => setOpen5(!open5)}>Close <RxCross1 /></button>
+                        </div>
+                    </div>
+                </div>
+            }
+            {open6 &&
+                <div onClick={() => setOpen6(!open6)} data-open={open6} className='featured__overlay'>
+                    <div onClick={(e) => e.stopPropagation()} className='container'>
+                        <div className="featured__overlay-content">
+                            <img src={ManualView} alt="" />
+                            <button className='featured__overlay-btn' onClick={() => setOpen6(!open6)}>Close <RxCross1 /></button>
                         </div>
                     </div>
                 </div>
